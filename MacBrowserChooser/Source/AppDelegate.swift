@@ -15,11 +15,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let menu = NSMenu()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        
+        // Menu
         statusItem.menu = menu
         statusItem.button?.image = NSImage(named:NSImage.Name("menuBarIcon"))
         menu.addItem(NSMenuItem(title: "Quit",
                                 action: #selector(NSApplication.terminate(_:)),
                                 keyEquivalent: ""))
+        
+        // Browsers
+        let systemBrowserService = SystemBrowserService()
+        systemBrowserService.setAsDefault()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
