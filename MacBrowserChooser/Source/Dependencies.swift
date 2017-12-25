@@ -14,9 +14,10 @@ protocol HasDependencies: class {
     var di: Dependencies! { get set }
 }
 
-struct Dependencies: HasSystemBrowserService {
+struct Dependencies: HasSystemBrowserService, HasBrowserRouterService {
     
     var systemBrowserService: ISystemBrowserService
+    var browserRouterService: IBrowserRouterService
     
     func resolveInternalDependencies() {
     }
@@ -28,7 +29,8 @@ class DI {
     
     private static let appDependencies: Dependencies = {
 
-        let d = Dependencies(systemBrowserService: SystemBrowserService())
+        let d = Dependencies(systemBrowserService: SystemBrowserService(),
+                             browserRouterService: BrowserRouterService())
         
         d.resolveInternalDependencies()
         

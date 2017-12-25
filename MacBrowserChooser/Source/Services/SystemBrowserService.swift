@@ -39,7 +39,7 @@ class SystemBrowserService: ISystemBrowserService {
     }
     
     func setSafariAsDefault() {
-        LSSetDefaultHandlerForURLScheme("http" as CFString, "com.apple.safari" as CFString)
+        LSSetDefaultHandlerForURLScheme("http" as CFString, "com.apple.Safari" as CFString)
     }
     
     func bundleIdentifierForDefault() -> String? {

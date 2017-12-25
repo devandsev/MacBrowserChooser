@@ -13,7 +13,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, HasDependencies {
 
     // MARK: - Dependencies
     
-    typealias Dependencies = HasSystemBrowserService
+    typealias Dependencies = HasSystemBrowserService & HasBrowserRouterService
     var di: Dependencies! = DI.dependencies
     
     // MARK: - Properties
@@ -34,9 +34,20 @@ class AppDelegate: NSObject, NSApplicationDelegate, HasDependencies {
         
         // Browsers
         di.systemBrowserService.setAsDefault()
+        
+        NSAppleEventManager.shared().setEventHandler(self,
+                                                     andSelector: #selector(self.getUrl(_:withReplyEvent:)),
+                                                     forEventClass: AEEventClass(kInternetEventClass),
+                                                     andEventID: AEEventID(kAEGetURL))
     }
 
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+    @objc func getUrl(_ event: NSAppleEventDescriptor,
+                      withReplyEvent replyEvent: NSAppleEventDescriptor) {
+        
+        guard let urlString: String = event.paramDescriptor(forKeyword: keyDirectObject)?.stringValue else {
+            return
+        }
+        
+        di.browserRouterService.handle(url: urlString)
     }
 }

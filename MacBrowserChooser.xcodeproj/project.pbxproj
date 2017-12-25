@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B017307A1FF11F0800B989B0 /* GeneralIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01730791FF11F0800B989B0 /* GeneralIX.swift */; };
 		B017307C1FF1200600B989B0 /* GeneralVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B017307B1FF1200600B989B0 /* GeneralVM.swift */; };
+		B017307E1FF12BD800B989B0 /* BrowserRouterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B017307D1FF12BD800B989B0 /* BrowserRouterService.swift */; };
 		B03008F11FF112470002C4AC /* GeneralVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03008F01FF112470002C4AC /* GeneralVC.swift */; };
 		B03008F31FF114320002C4AC /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03008F21FF114320002C4AC /* Dependencies.swift */; };
 		B07213851FEE903C00C98D91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B07213831FEE903C00C98D91 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		B01730791FF11F0800B989B0 /* GeneralIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralIX.swift; sourceTree = "<group>"; };
 		B017307B1FF1200600B989B0 /* GeneralVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralVM.swift; sourceTree = "<group>"; };
+		B017307D1FF12BD800B989B0 /* BrowserRouterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserRouterService.swift; sourceTree = "<group>"; };
 		B03008F01FF112470002C4AC /* GeneralVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralVC.swift; sourceTree = "<group>"; };
 		B03008F21FF114320002C4AC /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		B072137A1FEE903C00C98D91 /* MacBrowserChooser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacBrowserChooser.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				B0FBEBE21FEEA5DE009878AE /* SystemBrowserService.swift */,
+				B017307D1FF12BD800B989B0 /* BrowserRouterService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				B017307A1FF11F0800B989B0 /* GeneralIX.swift in Sources */,
 				B0FBEBE31FEEA5DE009878AE /* SystemBrowserService.swift in Sources */,
 				B0FBEBDF1FEEA574009878AE /* AppDelegate.swift in Sources */,
+				B017307E1FF12BD800B989B0 /* BrowserRouterService.swift in Sources */,
 				B017307C1FF1200600B989B0 /* GeneralVM.swift in Sources */,
 				B03008F31FF114320002C4AC /* Dependencies.swift in Sources */,
 				B03008F11FF112470002C4AC /* GeneralVC.swift in Sources */,
