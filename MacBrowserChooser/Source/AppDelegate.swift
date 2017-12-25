@@ -9,11 +9,20 @@
 import Cocoa
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, HasDependencies {
 
+    // MARK: - Dependencies
+    
+    typealias Dependencies = HasSystemBrowserService
+    var di: Dependencies! = DI.dependencies
+    
+    // MARK: - Properties
+    
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
     let menu = NSMenu()
 
+    // MARK: - Lifecycle
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
         // Menu
@@ -24,8 +33,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                                 keyEquivalent: ""))
         
         // Browsers
-        let systemBrowserService = SystemBrowserService()
-        systemBrowserService.setAsDefault()
+        di.systemBrowserService.setAsDefault()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

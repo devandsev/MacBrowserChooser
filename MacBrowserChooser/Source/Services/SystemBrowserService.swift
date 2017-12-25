@@ -8,7 +8,27 @@
 
 import Foundation
 
-class SystemBrowserService {
+protocol HasSystemBrowserService {
+    var systemBrowserService: ISystemBrowserService { get }
+}
+
+protocol ISystemBrowserService {
+    var isDefault: Bool { get }
+    func setAsDefault()
+    func setSafariAsDefault()
+}
+
+class SystemBrowserService: ISystemBrowserService {
+    
+    var isDefault: Bool {
+        guard let defaultBundleId = LSCopyDefaultHandlerForURLScheme("http" as CFString)?.takeRetainedValue() as? String,
+        let bundleId = Bundle.main.bundleIdentifier,
+        defaultBundleId.lowercased() == bundleId.lowercased() else {
+            return false
+        }
+        
+        return true
+    }
     
     func setAsDefault() {
         guard let bundleIdentifier = Bundle.main.bundleIdentifier else {
@@ -16,6 +36,10 @@ class SystemBrowserService {
         }
         
         LSSetDefaultHandlerForURLScheme("http" as CFString, bundleIdentifier as CFString)
+    }
+    
+    func setSafariAsDefault() {
+        LSSetDefaultHandlerForURLScheme("http" as CFString, "com.apple.safari" as CFString)
     }
     
     func bundleIdentifierForDefault() -> String? {
