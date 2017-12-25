@@ -10,6 +10,11 @@
 		B017307A1FF11F0800B989B0 /* GeneralIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01730791FF11F0800B989B0 /* GeneralIX.swift */; };
 		B017307C1FF1200600B989B0 /* GeneralVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B017307B1FF1200600B989B0 /* GeneralVM.swift */; };
 		B017307E1FF12BD800B989B0 /* BrowserRouterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B017307D1FF12BD800B989B0 /* BrowserRouterService.swift */; };
+		B01730811FF13C0D00B989B0 /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01730801FF13C0D00B989B0 /* Rule.swift */; };
+		B01730831FF1487700B989B0 /* RulesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01730821FF1487700B989B0 /* RulesService.swift */; };
+		B01730861FF156C900B989B0 /* RulesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01730851FF156C900B989B0 /* RulesVC.swift */; };
+		B017308C1FF158F400B989B0 /* ConditionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B017308A1FF158F400B989B0 /* ConditionsVC.swift */; };
+		B017308D1FF158F400B989B0 /* ConditionsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B017308B1FF158F400B989B0 /* ConditionsVC.xib */; };
 		B03008F11FF112470002C4AC /* GeneralVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03008F01FF112470002C4AC /* GeneralVC.swift */; };
 		B03008F31FF114320002C4AC /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03008F21FF114320002C4AC /* Dependencies.swift */; };
 		B07213851FEE903C00C98D91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B07213831FEE903C00C98D91 /* Main.storyboard */; };
@@ -23,6 +28,11 @@
 		B01730791FF11F0800B989B0 /* GeneralIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralIX.swift; sourceTree = "<group>"; };
 		B017307B1FF1200600B989B0 /* GeneralVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralVM.swift; sourceTree = "<group>"; };
 		B017307D1FF12BD800B989B0 /* BrowserRouterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserRouterService.swift; sourceTree = "<group>"; };
+		B01730801FF13C0D00B989B0 /* Rule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
+		B01730821FF1487700B989B0 /* RulesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesService.swift; sourceTree = "<group>"; };
+		B01730851FF156C900B989B0 /* RulesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesVC.swift; sourceTree = "<group>"; };
+		B017308A1FF158F400B989B0 /* ConditionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionsVC.swift; sourceTree = "<group>"; };
+		B017308B1FF158F400B989B0 /* ConditionsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConditionsVC.xib; sourceTree = "<group>"; };
 		B03008F01FF112470002C4AC /* GeneralVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralVC.swift; sourceTree = "<group>"; };
 		B03008F21FF114320002C4AC /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		B072137A1FEE903C00C98D91 /* MacBrowserChooser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacBrowserChooser.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,9 +56,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B017307F1FF13BEA00B989B0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B01730801FF13C0D00B989B0 /* Rule.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B01730841FF1568E00B989B0 /* Rules */ = {
+			isa = PBXGroup;
+			children = (
+				B01730851FF156C900B989B0 /* RulesVC.swift */,
+			);
+			path = Rules;
+			sourceTree = "<group>";
+		};
+		B01730871FF1581C00B989B0 /* Conditions */ = {
+			isa = PBXGroup;
+			children = (
+				B017308A1FF158F400B989B0 /* ConditionsVC.swift */,
+				B017308B1FF158F400B989B0 /* ConditionsVC.xib */,
+			);
+			path = Conditions;
+			sourceTree = "<group>";
+		};
 		B03008EE1FF111FC0002C4AC /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				B01730871FF1581C00B989B0 /* Conditions */,
+				B01730841FF1568E00B989B0 /* Rules */,
 				B03008EF1FF1121F0002C4AC /* General */,
 			);
 			path = Screens;
@@ -104,6 +141,7 @@
 		B0FBEBDA1FEEA574009878AE /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				B017307F1FF13BEA00B989B0 /* Models */,
 				B03008EE1FF111FC0002C4AC /* Screens */,
 				B0FBEBE11FEEA586009878AE /* Services */,
 				B0FBEBDB1FEEA574009878AE /* AppDelegate.swift */,
@@ -117,6 +155,7 @@
 			children = (
 				B0FBEBE21FEEA5DE009878AE /* SystemBrowserService.swift */,
 				B017307D1FF12BD800B989B0 /* BrowserRouterService.swift */,
+				B01730821FF1487700B989B0 /* RulesService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -180,6 +219,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B017308D1FF158F400B989B0 /* ConditionsVC.xib in Resources */,
 				B0FBEBDE1FEEA574009878AE /* icon-1024.png in Resources */,
 				B0FBEBDD1FEEA574009878AE /* Assets.xcassets in Resources */,
 				B07213851FEE903C00C98D91 /* Main.storyboard in Resources */,
@@ -198,6 +238,10 @@
 				B0FBEBDF1FEEA574009878AE /* AppDelegate.swift in Sources */,
 				B017307E1FF12BD800B989B0 /* BrowserRouterService.swift in Sources */,
 				B017307C1FF1200600B989B0 /* GeneralVM.swift in Sources */,
+				B01730811FF13C0D00B989B0 /* Rule.swift in Sources */,
+				B01730861FF156C900B989B0 /* RulesVC.swift in Sources */,
+				B017308C1FF158F400B989B0 /* ConditionsVC.swift in Sources */,
+				B01730831FF1487700B989B0 /* RulesService.swift in Sources */,
 				B03008F31FF114320002C4AC /* Dependencies.swift in Sources */,
 				B03008F11FF112470002C4AC /* GeneralVC.swift in Sources */,
 			);

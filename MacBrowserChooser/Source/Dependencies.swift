@@ -11,13 +11,14 @@ import Foundation
 protocol HasDependencies: class {
     associatedtype Dependencies
     
-    var di: Dependencies! { get set }
+    var di: Dependencies { get set }
 }
 
-struct Dependencies: HasSystemBrowserService, HasBrowserRouterService {
+struct Dependencies: HasSystemBrowserService, HasBrowserRouterService, HasRulesService {
     
     var systemBrowserService: ISystemBrowserService
     var browserRouterService: IBrowserRouterService
+    var rulesService: IRulesService
     
     func resolveInternalDependencies() {
     }
@@ -30,7 +31,8 @@ class DI {
     private static let appDependencies: Dependencies = {
 
         let d = Dependencies(systemBrowserService: SystemBrowserService(),
-                             browserRouterService: BrowserRouterService())
+                             browserRouterService: BrowserRouterService(),
+                             rulesService: RulesService())
         
         d.resolveInternalDependencies()
         

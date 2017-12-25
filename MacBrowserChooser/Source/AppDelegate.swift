@@ -14,7 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, HasDependencies {
     // MARK: - Dependencies
     
     typealias Dependencies = HasSystemBrowserService & HasBrowserRouterService
-    var di: Dependencies! = DI.dependencies
+    var di: Dependencies = DI.dependencies
     
     // MARK: - Properties
     

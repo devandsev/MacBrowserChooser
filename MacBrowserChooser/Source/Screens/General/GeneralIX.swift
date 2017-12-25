@@ -17,7 +17,7 @@ class GeneralIX: HasDependencies {
     // MARK: - Dependencies
     
     typealias Dependencies = HasSystemBrowserService
-    var di: Dependencies! = DI.dependencies
+    var di: Dependencies = DI.dependencies
     
     // MARK: Properties
     

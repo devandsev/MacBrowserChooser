@@ -16,7 +16,12 @@ protocol IBrowserRouterService {
     func handle(url: String)
 }
 
-class BrowserRouterService: IBrowserRouterService {
+class BrowserRouterService: IBrowserRouterService, HasDependencies {
+    
+    // MARK: - Dependencies
+    
+    typealias Dependencies = HasRulesService
+    lazy var di: Dependencies = DI.dependencies
     
     let safariBundleId = "com.apple.Safari"
     
